@@ -3,4 +3,6 @@
 3) Id and Name is given
 4) A folder is made inside dataSet folder in which the converted image (grayscale) is made
 5) the trainer trains itself by going inside the new folder
-6) then the folder is moved to another folder called Faces where all the face will be kept
+6) then the folder is moved to another folder called Faces where all the face will be kept in their respective named data base.
+7) Automated increment of ID. 
+8) Fresh Database

@@ -2,10 +2,10 @@ import numpy as np
 import cv2
 import sqlite3
 import os
-import Trainer
 from PIL import Image
 
 
+Id=0
 fontFace = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
 fontColor = (0, 0, 255)
@@ -13,8 +13,13 @@ fontColor = (0, 0, 255)
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 im = cv2.imread('download.jpeg', cv2.IMREAD_COLOR)
 
-def insertOrUpdate(Id, Name):
+def insertOrUpdate(Name):
     conn = sqlite3.connect("Faces1.0.db")
+    with conn:
+        cur=conn.cursor()
+        cur.execute("INSERT INTO People(Name) VALUES ('"+ Name +"');")
+        max_id = cur.lastrowid
+        Id= max_id
     cmd = "SELECT * FROM People WHERE ID="+str(Id)
     cursor = conn.execute(cmd)
     isRecordExist=0
@@ -27,18 +32,18 @@ def insertOrUpdate(Id, Name):
     conn.execute(cmd)
     conn.commit()
     conn.close()
+    return max_id
 
-id=raw_input('Enter your id:')
 name=raw_input('Enter your name:')
-insertOrUpdate(id, name)
-asd="dataSet/" + name
-os.makedirs(asd)
+Id=insertOrUpdate(name)
+Facespath="dataSet/" + name
+os.makedirs(Facespath)
 gray=cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
 faces=detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(100, 100), flags=cv2.CASCADE_SCALE_IMAGE)
 for(x,y,w,h) in faces:
 
 
-    cv2.imwrite("dataSet/" + name+ "/face-" + name + "." + str(id) + ".jpg", gray[y:y + h, x:x + w])
+    cv2.imwrite("dataSet/" + name+ "/face-" + name + "." + str(Id) + ".jpg", gray[y:y + h, x:x + w])
     cv2.rectangle(im, (x - 50, y - 50), (x + w + 50, y + h + 50), (225, 0, 0), 2)
 
 cv2.imshow('im', im)
@@ -92,7 +97,7 @@ def getImagesAndLabels(path):
 
 
 # Get the faces and IDs
-faces, ids = getImagesAndLabels(asd)
+faces, ids = getImagesAndLabels(Facespath)
 
 # Train the model using the faces and IDs
 recognizer.train(faces, np.array(ids))
@@ -100,5 +105,5 @@ recognizer.train(faces, np.array(ids))
 # Save the model into trainer.yml
 recognizer.write('trainer/trainer.yml')
 
-os.rename("/home/pragyan/Documents/Facial recognition main project/Facial recognition 1.2/dataSet/"+name, "/home/pragyan/Documents/Facial recognition main project/Facial recognition 1.2/Faces database/"+name)
+os.rename("/home/pragyan/Documents/Facial recognition main project/Facial recognition 1.2/dataSet/" + name, "/home/pragyan/Documents/Facial recognition main project/Facial recognition 1.2/Faces database/" + name)
 
