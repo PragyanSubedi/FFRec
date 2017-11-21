@@ -1478,6 +1478,6 @@ labels: !!opencv-matrix
    rows: 1
    cols: 1
    dt: i
-   data: [ 13 ]
+   data: [ 1 ]
 labelsInfo:
    []
