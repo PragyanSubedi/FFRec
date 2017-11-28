@@ -11,7 +11,7 @@ fontScale = 1
 fontColor = (0, 0, 255)
 
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-im = cv2.imread('download.jpeg', cv2.IMREAD_COLOR)
+im = cv2.imread('pariwesh.jpg', cv2.IMREAD_COLOR)
 
 def insertOrUpdate(Name):
     conn = sqlite3.connect("Faces1.0.db")
@@ -36,6 +36,7 @@ def insertOrUpdate(Name):
 
 name=raw_input('Enter your name:')
 Id=insertOrUpdate(name)
+# "_".join(name.lower().split(" "))
 Facespath="dataSet/" + name
 os.makedirs(Facespath)
 gray=cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
@@ -43,7 +44,7 @@ faces=detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(
 for(x,y,w,h) in faces:
 
 
-    cv2.imwrite("dataSet/" + name+ "/face-" + name + "." + str(Id) + ".jpg", gray[y:y + h, x:x + w])
+    cv2.imwrite(Facespath+ "/face-" + name + "." + str(Id) + ".jpg", gray[y:y + h, x:x + w])
     cv2.rectangle(im, (x - 50, y - 50), (x + w + 50, y + h + 50), (225, 0, 0), 2)
 
 cv2.imshow('im', im)
@@ -55,7 +56,7 @@ cv2.destroyAllWindows()
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 # Using prebuilt frontal face training model, for face detection
-detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml");
+# detector = cv2.CascadeClassifier("haarcascade_frontalface_default.xml");
 
 
 # Create method to get the images and label data
@@ -105,5 +106,4 @@ recognizer.train(faces, np.array(ids))
 # Save the model into trainer.yml
 recognizer.write('trainer/trainer.yml')
 
-os.rename("/home/pragyan/Documents/Facial recognition main project/Facial recognition 1.2/dataSet/" + name, "/home/pragyan/Documents/Facial recognition main project/Facial recognition 1.2/Faces database/" + name)
-
+os.rename("/home/pragyan/Documents/Facial recognition main project/Facial recognition 1.2/dataSet/" + name, "/home/pragyan/Documents/Facial recognition main project/Facial recognition 1 .3/Faces database" + name)

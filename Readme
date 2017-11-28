@@ -1,5 +1,6 @@
 
 Version 1.2
+
 1) Run Dataset creator.py
 2) An image is fed to the creator
 3) Id and Name is given
@@ -8,3 +9,5 @@ Version 1.2
 6) then the folder is moved to another folder called Faces where all the face will be kept in their respective named data base.
 7) Addded Automated increment of ID. 
 8) Made Fresh Database
+9) IF downloading from Github, make a directory named as "Faces database" in root folder as github doesnt show empty directory
+10) Added video recognition feature.
