@@ -11,7 +11,7 @@ fontScale = 1
 fontColor = (0, 0, 255)
 
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-im = cv2.imread('images/pragyan.jpg', cv2.IMREAD_COLOR)
+im = cv2.imread('images/pariwesh.jpg', cv2.IMREAD_COLOR)
 
 def insertOrUpdate(Name):
     conn = sqlite3.connect("Faces1.0.db")
