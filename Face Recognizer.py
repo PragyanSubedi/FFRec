@@ -2,11 +2,14 @@ import numpy as np
 import cv2
 import sqlite3
 import urllib
+
 fontFace = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
-fontColor = (0, 0, 255)
+fontColor = (255, 0, 0)
+# for record not found case
+fontColor1 = (0, 0, 255)
 
-url='http://192.168.1.100:8080/shot.jpg'
+#url='http://192.168.1.100:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 img = cv2.imread('images/pragyan.jpg', cv2.IMREAD_COLOR)
 
@@ -14,7 +17,7 @@ recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
 cascadePath = "haarcascade_frontalface_default.xml"
 faceCascade = cv2.CascadeClassifier(cascadePath);
-path= 'dataSet'
+# path= 'dataSet'
 
 def getProfile(Id):
     conn=sqlite3.connect("Faces1.0.db")
@@ -53,7 +56,7 @@ for(x,y,w,h) in faces:
     else:
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 225), 2)
         font = cv2.FONT_HERSHEY_SIMPLEX
-        cv2.putText(img,"Not Found", (x, y + h + 160 ), fontFace, fontScale, fontColor)
+        cv2.putText(img,"Not Found", (x, y + h + 30 ), fontFace, fontScale, fontColor1)
 cv2.imshow('frame', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

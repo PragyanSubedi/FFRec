@@ -37,8 +37,8 @@ def insertOrUpdate(Name):
 sname=raw_input('Enter your name:')
 Id=insertOrUpdate(sname)
 name =  "_".join(sname.lower().split(" "))
-Facespath="Faces database/" + name
-os.makedirs(Facespath)
+# Facespath="Faces database/" + name
+# os.makedirs(Facespath)
 gray=cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
 #os.rename("/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/dataSet/" + name, "/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/Faces database/" + name)
 
@@ -46,8 +46,8 @@ faces=detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(
 for(x,y,w,h) in faces:
 
 
-    cv2.imwrite(Facespath+ "/face-" + name + "." + str(Id) + ".jpg", gray[y:y + h, x:x + w])
-    cv2.rectangle(im, (x - 50, y - 50), (x + w + 50, y + h + 50), (225, 0, 0), 2)
+    cv2.imwrite("Faces database/face-" + name + "." + str(Id) + ".jpg", gray[y:y + h, x:x + w])
+    cv2.rectangle(im, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 225, 0), 2)
 
 
 
@@ -98,12 +98,13 @@ def getImagesAndLabels(path):
 
 
 # Get the faces and IDs
-faces, ids = getImagesAndLabels(Facespath)
+faces, ids = getImagesAndLabels('Faces database')
 
 # Train the model using the faces and IDs
 recognizer.train(faces, np.array(ids))
 
 # Save the model into trainer.yml
+# with open('trainer.yml', "a") as recognizer:
 recognizer.write('trainer/trainer.yml')
 
 
