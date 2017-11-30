@@ -3,6 +3,7 @@ import cv2
 import sqlite3
 import os
 from PIL import Image
+import urllib
 
 
 Id=0
@@ -10,8 +11,9 @@ fontFace = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
 fontColor = (0, 0, 255)
 
+url='http://192.168.0.112:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-im = cv2.imread('images/pariwesh.jpg', cv2.IMREAD_COLOR)
+#im = cv2.imread('images/testpragyan.jpg', cv2.IMREAD_COLOR)
 
 def insertOrUpdate(Name):
     conn = sqlite3.connect("Faces1.0.db")
@@ -37,17 +39,27 @@ def insertOrUpdate(Name):
 sname=raw_input('Enter your name:')
 Id=insertOrUpdate(sname)
 name =  "_".join(sname.lower().split(" "))
+# Make directory
 # Facespath="Faces database/" + name
 # os.makedirs(Facespath)
-gray=cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
+while(True):
+    imgResp = urllib.urlopen(url)
+    # change into bytearray of unsigned integer type
+    imgNp = np.array(bytearray(imgResp.read()), dtype=np.uint8)
+    # Decode numpy array to opencv2 image
+    img = cv2.imdecode(imgNp, -1)
+    sampleNum=0
+
+    gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 #os.rename("/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/dataSet/" + name, "/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/Faces database/" + name)
 
-faces=detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(100, 100), flags=cv2.CASCADE_SCALE_IMAGE)
-for(x,y,w,h) in faces:
+    faces=detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(100, 100), flags=cv2.CASCADE_SCALE_IMAGE)
+    for(x,y,w,h) in faces:
+        sampleNum= sampleNum + 1
+        cv2.imwrite("Faces database/face-" + name + "." + str(Id) + "."+ str(sampleNum)+".jpg", gray[y:y + h, x:x + w])
+        cv2.rectangle(img, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 225, 0), 2)
 
-
-    cv2.imwrite("Faces database/face-" + name + "." + str(Id) + ".jpg", gray[y:y + h, x:x + w])
-    cv2.rectangle(im, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 225, 0), 2)
+    cv2.imshow('frame', img)
 
 
 
@@ -107,8 +119,11 @@ recognizer.train(faces, np.array(ids))
 # with open('trainer.yml', "a") as recognizer:
 recognizer.write('trainer/trainer.yml')
 
-
-
-cv2.imshow('im', im)
-cv2.waitKey(0)
+if cv2.waitKey(0) & 0xFF == ord('q'):
+    break
+    # break if the sample number is more than 20
+elif sampleNum > 20:
+    break
+# cv2.imshow('img', img)
+# cv2.waitKey(0)
 cv2.destroyAllWindows()
