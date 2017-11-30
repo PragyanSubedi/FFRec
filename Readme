@@ -11,3 +11,5 @@ Version 1.2
 8) Made Fresh Database
 9) IF downloading from Github, make a directory named as "Faces database" in root folder as github doesnt show empty directory
 10) Added video recognition feature.
+11) Added video data creation feature.
+12) Red = Unrecognized, Blue= Recognized, Green= Detected
