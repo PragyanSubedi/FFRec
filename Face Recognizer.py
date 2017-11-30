@@ -9,7 +9,7 @@ fontColor = (255, 0, 0)
 # for record not found case
 fontColor1 = (0, 0, 255)
 
-url='http://192.168.0.112:8080/shot.jpg'
+url='http://192.168.0.109:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 # img = cv2.imread('images/download.jpeg', cv2.IMREAD_COLOR)
 
