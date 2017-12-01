@@ -9,7 +9,7 @@ fontColor = (255, 0, 0)
 # for record not found case
 fontColor1 = (0, 0, 255)
 
-url='http://192.168.0.109:8080/shot.jpg'
+url='http://192.168.1.100:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 # img = cv2.imread('images/download.jpeg', cv2.IMREAD_COLOR)
 
@@ -43,14 +43,15 @@ while True:
     for(x,y,w,h) in faces:
 
         Idu, conf = recognizer.predict(gray[y:y+h, x:x+w])
-        if (conf<50):
+        cv2.putText(img,str(conf), (x, y + h + 120 ), fontFace, fontScale, fontColor1)
+        if (conf<70):
             cv2.rectangle(img, (x, y), (x + w, y + h), (225, 0, 0), 2)
             profile = getProfile(Idu)
             if(profile!=None):
                 cv2.putText(img, str(profile[1]), (x,y+h+30),fontFace, fontScale, fontColor)
                 cv2.putText(img, str(profile[2]), (x, y + h + 60), fontFace, fontScale, fontColor)
                 cv2.putText(img, str(profile[3]), (x, y + h + 90), fontFace, fontScale, fontColor)
-                cv2.putText(img, str(profile[4]), (x, y + h + 120), fontFace, fontScale, fontColor)
+                #cv2.putText(img, str(profile[4]), (x, y + h + 120), fontFace, fontScale, fontColor)
         else:
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 0, 225), 2)
             font = cv2.FONT_HERSHEY_SIMPLEX
