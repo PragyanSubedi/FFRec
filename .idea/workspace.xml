@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="78b3e27a-c638-40ea-84bc-94ca9e7d058d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Faces database/face-sss.108.1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Faces1.0.db" afterPath="$PROJECT_DIR$/Faces1.0.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dataset creator.py" afterPath="$PROJECT_DIR$/Dataset creator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Face Recognizer.py" afterPath="$PROJECT_DIR$/Face Recognizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme" afterPath="$PROJECT_DIR$/Readme" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trainer/trainer.yml" afterPath="$PROJECT_DIR$/trainer/trainer.yml" />
-    </list>
+    <list default="true" id="78b3e27a-c638-40ea-84bc-94ca9e7d058d" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
