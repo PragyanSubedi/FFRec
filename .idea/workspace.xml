@@ -18,12 +18,19 @@
       <file leaf-file-name="Face Recognizer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Face Recognizer.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="227">
               <caret line="51" column="60" lean-forward="false" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
                 <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+            <state relative-caret-position="245">
+              <caret line="52" column="60" lean-forward="false" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+>>>>>>> fix_frame_rate
               </folding>
             </state>
           </provider>
@@ -61,9 +68,9 @@
         <option value="$PROJECT_DIR$/Facial Recognition dataset creator.py" />
         <option value="$PROJECT_DIR$/trainer/trainer.yml" />
         <option value="$PROJECT_DIR$/Trainer.py" />
-        <option value="$PROJECT_DIR$/Face Recognizer.py" />
         <option value="$PROJECT_DIR$/moreimages.py" />
         <option value="$PROJECT_DIR$/Dataset creator.py" />
+        <option value="$PROJECT_DIR$/Face Recognizer.py" />
       </list>
     </option>
   </component>
@@ -193,6 +200,26 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.detector">
+<<<<<<< HEAD
+=======
+    <configuration default="false" name="trainer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Facial recognition 1.1" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Trainer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+>>>>>>> fix_frame_rate
     <configuration default="false" name="Facial Recognition dataset creator" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -226,6 +253,7 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
+<<<<<<< HEAD
     </configuration>
     <configuration default="false" name="trainer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -243,6 +271,8 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
+=======
+>>>>>>> fix_frame_rate
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -424,14 +454,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="24" width="1315" height="744" extended-state="6" />
+<<<<<<< HEAD
     <editor active="false" />
+=======
+    <editor active="true" />
+>>>>>>> fix_frame_rate
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20380229" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31825274" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31825274" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> fix_frame_rate
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -446,6 +484,9 @@
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.yml" />
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -454,6 +495,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Face Recognizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -473,6 +515,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> fix_frame_rate
     <entry file="file://$PROJECT_DIR$/Dataset creator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -483,6 +527,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/trainer/trainer.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92934">
@@ -548,12 +593,47 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> fix_frame_rate
     <entry file="file://$PROJECT_DIR$/Face Recognizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+<<<<<<< HEAD
+            <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
+            <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+>>>>>>> fix_frame_rate
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dataset creator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Face Recognizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+<<<<<<< HEAD
             <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
             <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
           </folding>
@@ -585,35 +665,8 @@
             <element signature="e#0#18#0" expanded="true" />
             <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
             <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Trainer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="14" column="55" lean-forward="false" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dataset creator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Face Recognizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
-            <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+>>>>>>> fix_frame_rate
           </folding>
         </state>
       </provider>
@@ -641,8 +694,11 @@
           <caret line="29" column="11" lean-forward="false" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+<<<<<<< HEAD
             <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
             <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+>>>>>>> fix_frame_rate
           </folding>
         </state>
       </provider>
@@ -670,8 +726,11 @@
           <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+<<<<<<< HEAD
             <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
             <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+>>>>>>> fix_frame_rate
           </folding>
         </state>
       </provider>
@@ -699,8 +758,11 @@
           <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+<<<<<<< HEAD
             <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
             <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+>>>>>>> fix_frame_rate
           </folding>
         </state>
       </provider>
@@ -735,8 +797,11 @@
           <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+<<<<<<< HEAD
             <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
             <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+>>>>>>> fix_frame_rate
           </folding>
         </state>
       </provider>
@@ -758,13 +823,6 @@
     <entry file="file://$PROJECT_DIR$/Faces database/test1/face-test1.7.jpg" />
     <entry file="file://$PROJECT_DIR$/Faces database/new_test/face-new_test.12.jpg" />
     <entry file="file://$PROJECT_DIR$/Faces database/test_name/face-test_name.10.jpg" />
-    <entry file="file://$PROJECT_DIR$/trainer/trainer.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Trainer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1008">
@@ -781,6 +839,7 @@
     <entry file="file://$PROJECT_DIR$/Faces database/face-test4.66.2.jpg" />
     <entry file="file://$PROJECT_DIR$/Faces database/face-test5.67.1.jpg" />
     <entry file="file://$PROJECT_DIR$/moreimages.py" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Face Recognizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -789,8 +848,48 @@
             <element signature="e#0#18#0" expanded="true" />
             <marker date="1512141564903" expanded="true" signature="1758:2064" ph="..." />
             <marker date="1512141564903" expanded="true" signature="1758:2142" ph="..." />
+=======
+    <entry file="file://$PROJECT_DIR$/Faces database/face-test_2.76.1.jpg" />
+    <entry file="file://$PROJECT_DIR$/Faces database/face-test_2.76.2.jpg" />
+    <entry file="file://$PROJECT_DIR$/Faces database/face-test.85.82.jpg" />
+    <entry file="file://$PROJECT_DIR$/Faces database/face-test.85.77.jpg" />
+    <entry file="file://$PROJECT_DIR$/Faces database/face-test.85.75.jpg" />
+    <entry file="file://$PROJECT_DIR$/Faces database/face-test.85.78.jpg" />
+    <entry file="file://$PROJECT_DIR$/trainer.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainer/testing.yml" />
+    <entry file="file://$PROJECT_DIR$/trainer/trainer.yml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-3296688">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Faces database/face-aa.93.7.jpg" />
+    <entry file="file://$PROJECT_DIR$/Faces database/face-ambika.104.12.jpg" />
+    <entry file="file://$PROJECT_DIR$/Faces database/face-pragyan.106.21.jpg" />
+    <entry file="file://$PROJECT_DIR$/Face Recognizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="52" column="60" lean-forward="false" selection-start-line="52" selection-start-column="60" selection-end-line="52" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+>>>>>>> fix_frame_rate
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Faces database/face-sss.108.1.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dataset creator.py">
