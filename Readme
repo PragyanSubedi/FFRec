@@ -10,4 +10,4 @@ Version 1.2
 7) Addded Automated increment of ID. 
 8) Made Fresh Database
 9) IF downloading from Github, make a directory named as "Faces database" in root folder as github doesnt show empty directory
-10) Added video recognition feature.
+10) Image face recognition feature

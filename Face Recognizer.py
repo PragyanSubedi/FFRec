@@ -11,7 +11,7 @@ fontColor1 = (0, 0, 255)
 
 #url='http://192.168.1.100:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-img = cv2.imread('images/pragyan.jpg', cv2.IMREAD_COLOR)
+img = cv2.imread('images/pariwesh.jpg', cv2.IMREAD_COLOR)
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')
