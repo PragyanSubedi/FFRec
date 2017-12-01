@@ -64,7 +64,7 @@ while(True):
     if cv2.waitKey(10) & 0xFF == ord('q'):
         break
         # break if the sample number is more than 20
-    elif sampleNum > 20:
+    elif sampleNum > 50:
         break
 cv2.destroyAllWindows()
 # Trainer

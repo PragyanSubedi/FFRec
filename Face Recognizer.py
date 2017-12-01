@@ -44,7 +44,7 @@ while True:
 
         Idu, conf = recognizer.predict(gray[y:y+h, x:x+w])
         cv2.putText(img,str(conf), (x, y + h + 120 ), fontFace, fontScale, fontColor1)
-        if (conf<70):
+        if (conf<80):
             cv2.rectangle(img, (x, y), (x + w, y + h), (225, 0, 0), 2)
             profile = getProfile(Idu)
             if(profile!=None):
