@@ -11,7 +11,7 @@ fontFace = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
 fontColor = (0, 0, 255)
 
-url='http://192.168.1.100:8080/shot.jpg'
+url='http://192.168.1.180:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #im = cv2.imread('images/testpragyan.jpg', cv2.IMREAD_COLOR)
 
@@ -37,20 +37,20 @@ def insertOrUpdate(Name):
     return max_id
 
 sname=raw_input('Enter your name:')
+
 Id=insertOrUpdate(sname)
 name =  "_".join(sname.lower().split(" "))
 # Make directory
 # Facespath="Faces database/" + name
 # os.makedirs(Facespath)
 sampleNum=0
+i = raw_input('Enter no. of face samples')
 while(True):
     imgResp = urllib.urlopen(url)
     # change into bytearray of unsigned integer type
     imgNp = np.array(bytearray(imgResp.read()), dtype=np.uint8)
     # Decode numpy array to opencv2 image
     img = cv2.imdecode(imgNp, -1)
-
-
     gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 #os.rename("/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/dataSet/" + name, "/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/Faces database/" + name)
     cv2.imshow('frame', img)
@@ -60,11 +60,13 @@ while(True):
         cv2.imwrite("Faces database/face-" + name + "." + str(Id) + "."+ str(sampleNum)+".jpg", gray[y:y + h, x:x + w])
         cv2.rectangle(img, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 225, 0), 2)
 
+
     cv2.imshow('frame', img)
-    if cv2.waitKey(10) & 0xFF == ord('q'):
+    if cv2.waitKey(100) & 0xFF == ord('q'):
         break
+
         # break if the sample number is more than 20
-    elif sampleNum > 50:
+    elif sampleNum >i:
         break
 cv2.destroyAllWindows()
 # Trainer
