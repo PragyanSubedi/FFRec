@@ -13,6 +13,8 @@ fontColor = (0, 0, 255)
 
 url='http://192.168.1.180:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+eyecascadePath= "haarcascade_eye.xml"
+eyeCascade=cv2.CascadeClassifier(eyecascadePath)
 #im = cv2.imread('images/testpragyan.jpg', cv2.IMREAD_COLOR)
 
 def insertOrUpdate(Name):
@@ -37,36 +39,41 @@ def insertOrUpdate(Name):
     return max_id
 
 sname=raw_input('Enter your name:')
-
 Id=insertOrUpdate(sname)
 name =  "_".join(sname.lower().split(" "))
 # Make directory
 # Facespath="Faces database/" + name
 # os.makedirs(Facespath)
 sampleNum=0
-i = raw_input('Enter no. of face samples')
 while(True):
     imgResp = urllib.urlopen(url)
     # change into bytearray of unsigned integer type
     imgNp = np.array(bytearray(imgResp.read()), dtype=np.uint8)
     # Decode numpy array to opencv2 image
     img = cv2.imdecode(imgNp, -1)
+
+
     gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 #os.rename("/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/dataSet/" + name, "/home/merishna/Documents/ubuntu/PycharmProjects/Facial recognition/FFRec/Faces database/" + name)
     cv2.imshow('frame', img)
     faces=detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(100, 100), flags=cv2.CASCADE_SCALE_IMAGE)
     for(x,y,w,h) in faces:
         sampleNum= sampleNum + 1
+
         cv2.imwrite("Faces database/face-" + name + "." + str(Id) + "."+ str(sampleNum)+".jpg", gray[y:y + h, x:x + w])
         cv2.rectangle(img, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 225, 0), 2)
-
+        roi_gray = gray[y:y + h, x:x + w]
+        roi_color = img[y:y + h, x:x + w]
+        eyes = eyeCascade.detectMultiScale(roi_gray)
+        for (ex, ey, ew, eh) in eyes:
+            cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
+            cv2.imwrite("Faces database/eye-" + name + "." + str(Id) + "." + str(sampleNum) + ".jpg", gray[ey:ey + eh, ex:ex + ew])
 
     cv2.imshow('frame', img)
-    if cv2.waitKey(100) & 0xFF == ord('q'):
+    if cv2.waitKey(10) & 0xFF == ord('q'):
         break
-
         # break if the sample number is more than 20
-    elif sampleNum >i:
+    elif sampleNum > 50:
         break
 cv2.destroyAllWindows()
 # Trainer
@@ -84,7 +91,7 @@ def getImagesAndLabels(path):
 
     # Initialize empty face sample
     faceSamples = []
-
+    eyeSamples=[]
     # Initialize empty id
     ids = []
 
@@ -107,7 +114,9 @@ def getImagesAndLabels(path):
         for (x, y, w, h) in faces:
             # Add the image to face samples
             faceSamples.append(img_numpy[y:y + h, x:x + w])
-
+        # Loop for each eye, append to their respective ID
+        for (ex, ey, ew, eh) in eyes:
+            eyeSamples.append(img_numpy[ey:ey + eh, ex:ex + ew])
             # Add the ID to IDs
             ids.append(id)
 
@@ -117,10 +126,10 @@ def getImagesAndLabels(path):
 
 # Get the faces and IDs
 faces, ids = getImagesAndLabels('Faces database/')
-
+eyes, ids = getImagesAndLabels('Faces database/')
 # Train the model using the faces and IDs
 recognizer.train(faces, np.array(ids))
-
+recognizer.train(eyes, np.array(ids))
 # Save the model into trainer.yml
 # with open('trainer.yml', "a") as recognizer:
 recognizer.write('trainer/trainer.yml')
