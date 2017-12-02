@@ -12,6 +12,8 @@ Version 2.0
 9) IF downloading from Github, make a directory named as "Faces database" in root folder as github doesnt show empty directory
 10) Added video recognition feature.
 11) Added video data creation feature.
-12) Red = Unrecognized, Blue= Recognized, Green= Detected
+12) (NOT WORKING) Red = Unrecognized, Blue= Recognized, Green= Detected
 13) conf<80 recognizes more efficiently
-
+14) Added Tkinter GUI
+15) Changed face recognizer.py to function file
+16) Use VFR GUI to run 
