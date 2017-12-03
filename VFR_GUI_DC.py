@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import Tkinter as tk
 from Tkinter import *
-import Image, ImageTk
+from PIL import Image, ImageTk
 import urllib
 import sqlite3
 import ttk
