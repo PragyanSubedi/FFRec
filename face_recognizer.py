@@ -10,7 +10,7 @@ fontColor = (255, 0, 0)
 fontColor1 = (0, 0, 255)
 
 
-url='http://192.168.0.109:8080/shot.jpg'
+url='http://192.168.1.180:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 recognizer = cv2.face.LBPHFaceRecognizer_create()
 recognizer.read('trainer/trainer.yml')

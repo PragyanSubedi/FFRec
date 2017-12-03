@@ -17,4 +17,6 @@ Version 2.0
 14) Added Tkinter GUI
 15) Changed face recognizer.py to function file
 16) Use VFR GUI to run 
-17) Added GUI.sh to run python script VFR_GUI_DC.py
+17) Added a main GUI( main Menu)
+18) Run GUI.sh to run python script GUI_main.py
+

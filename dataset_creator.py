@@ -11,7 +11,7 @@ fontFace = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
 fontColor = (0, 0, 255)
 
-url='http://192.168.0.109:8080/shot.jpg'
+url='http://192.168.1.180:8080/shot.jpg'
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #im = cv2.imread('images/testpragyan.jpg', cv2.IMREAD_COLOR)
 

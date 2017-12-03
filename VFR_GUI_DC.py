@@ -14,7 +14,8 @@ fontFace = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
 fontColor = (255, 0, 0)
 fontColor1 = (0, 0, 255)
-
+global lbl
+global detector
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -28,7 +29,7 @@ faceCascade = cv2.CascadeClassifier(cascadePath);
 sampleNum = 0
 Id=0
 
-url='http://192.168.0.109:8080/shot.jpg'
+url='http://192.168.1.180:8080/shot.jpg'
 
 #Set up GUI
 root = tk.Tk()
@@ -47,6 +48,7 @@ lmain = tk.Label(imageFrame)
 lmain.grid(row=0, column=0)
 
 
+#for trainer
 def getImagesAndLabels(path):
     # Get all file path
     imagePaths = [os.path.join(path, f) for f in os.listdir(path)]
@@ -83,7 +85,7 @@ def getImagesAndLabels(path):
     # Pass the face array and IDs array
     return faceSamples, ids
 
-
+#for dataset creator
 def insertOrUpdate(Name):
     conn = sqlite3.connect("Faces1.0.db")
     with conn:
@@ -108,9 +110,15 @@ def insertOrUpdate(Name):
     return max_id
 Id = insertOrUpdate("testname")
 
+#to run on clicking the button "Train"
 def createDataset(event):
+    # global lbl
+    # # change text
+    lbl.config(text="Your face has been saved. You can now close this window.")
+
     global sampleNum
     sampleNum=0
+
     while(True):
         imgResp = urllib.urlopen(url)
         # change into bytearray of unsigned integer type
@@ -123,10 +131,11 @@ def createDataset(event):
         for(x,y,w,h) in faces:
             sampleNum= sampleNum + 1
             cv2.imwrite("Faces database/face-" + "testname" + "." + str(Id) + "."+ str(sampleNum)+".jpg", gray[y:y + h, x:x + w])
-            cv2.rectangle(cv2image, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 225, 0), 2)
+            cv2.rectangle(cv2image, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 255, 0), 2)
             # break if the sample number is more than 5
         if sampleNum > 5:
             break
+
     # Trainer
     # # Create Local Binary Patterns Histograms for face recognization
     recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -144,15 +153,12 @@ def createDataset(event):
 def quit_app():
     root.quit()
 
-# def createDataset():
-
 # Opens a message box when called
 def show_about(event=None):
     tkMessageBox.showwarning(
         "About",
-        "This Awesome Program was Made in 2016"
+        "This Awesome Program was Made in 2017"
     )
-
 
 # Create the menu object
 the_menu = Menu(root)
@@ -176,7 +182,13 @@ file_menu.add_command(label="Quit", command=quit_app)
 # Add the pull down menu to the menu bar
 the_menu.add_cascade(label="File", menu=file_menu)
 
+lbl = Label(root, text="Please set up your face in the database", bg="#00394d")
+lbl.grid(row=0, column=30, pady=100, padx=20)
+creatorButton = Button(root, text="Set it Up!")
+creatorButton.bind("<Button-1>", createDataset)
+creatorButton.grid(row=0, column=10)
 
+#shows video frame
 def showFrame():
     imgResp = urllib.urlopen(url)
 
@@ -187,19 +199,15 @@ def showFrame():
     img = cv2.imdecode(imgNp, -1)
     cv2image = cv2.cvtColor(img, cv2.COLOR_BGR2RGBA)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    faces = detector.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5, minSize=(100, 100),
-                                      flags=cv2.CASCADE_SCALE_IMAGE)
+    faces = detector.detectMultiScale(cv2image, scaleFactor=1.2, minNeighbors=5, minSize=(100, 100), flags=cv2.CASCADE_SCALE_IMAGE)
     for (x, y, w, h) in faces:
-        cv2.rectangle(cv2image, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 225, 0), 2)
+        cv2.rectangle(cv2image, (x - 50, y - 50), (x + w + 50, y + h + 50), (0, 255, 0), 2)
 
     img = Image.fromarray(cv2image)
     imgtk = ImageTk.PhotoImage(image=img)
     lmain.imgtk = imgtk
     lmain.configure(image=imgtk)
     lmain.after(10, showFrame)
-    creatorButton = Button(root, text="Train")
-    creatorButton.bind("<Button-1>", createDataset)
-    creatorButton.grid(row=0, column=10)
 
 root.config(menu=the_menu)
 showFrame()  #Display loop
