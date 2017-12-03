@@ -54,7 +54,7 @@ def getImagesAndLabels(path):
 
 
 # Get the faces and IDs
-faces, ids = getImagesAndLabels('/home/pragyan/Documents/Facial recognition main project/Facial recognition 1 .3/Faces database/Pariwesh Subedi')
+faces, ids = getImagesAndLabels('Faces database/test3')
 
 # Train the model using the faces and IDs
 recognizer.train(faces, np.array(ids))
