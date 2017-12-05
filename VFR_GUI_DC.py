@@ -44,14 +44,14 @@ faceCascade = cv2.CascadeClassifier(cascadePath);
 sampleNum = 0
 Id=0
 
-url='http://192.168.0.109:8080/shot.jpg'
+url='http://192.168.1.100:8080/shot.jpg'
 
 #Set up GUI
 root = tk.Toplevel()
 root.geometry("1280x800")
 #Makes main window
 root.wm_title("Floating Faces")
-root.config(background="#d9d9d9")
+# root.config(background="#d9d9d9")
 
 #Graphics window
 imageFrame = tk.Frame(root, width=200, height=600)
