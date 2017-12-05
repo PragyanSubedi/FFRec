@@ -1,2 +1,2 @@
 #!/bin/dash
-python GUI_main.py
+python VFR_GUI_main.py

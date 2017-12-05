@@ -14,8 +14,23 @@ fontFace = cv2.FONT_HERSHEY_SIMPLEX
 fontScale = 1
 fontColor = (255, 0, 0)
 fontColor1 = (0, 0, 255)
-global lbl
-global detector
+# global lbl
+#create username
+# lbl_username = tk.Label(root, text="Username", bg="#0D7E50")
+# ent_username = tk.Entry(root)
+#
+# #pack username
+# lbl_username.grid(row=5, column=0)
+# ent_username.grid(row=6, column=0)
+#
+# #basic enter for password
+# lbl_password = tk.Label(root, text="Password", bg="#0D7E50")
+# ent_password = tk.Entry(root, show="*")
+#
+# #pack password
+# lbl_password.grid(row=5, column=1,sticky = N)
+# ent_password.grid(row=6, column=1)
+# btn = Tkinter.Button(window, text="Sign up", command=question)
 detector = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -29,14 +44,14 @@ faceCascade = cv2.CascadeClassifier(cascadePath);
 sampleNum = 0
 Id=0
 
-url='http://192.168.1.180:8080/shot.jpg'
+url='http://192.168.0.109:8080/shot.jpg'
 
 #Set up GUI
-root = tk.Tk()
+root = tk.Toplevel()
 root.geometry("1280x800")
 #Makes main window
 root.wm_title("Floating Faces")
-root.config(background="#00394d")
+root.config(background="#d9d9d9")
 
 #Graphics window
 imageFrame = tk.Frame(root, width=200, height=600)
@@ -184,6 +199,12 @@ the_menu.add_cascade(label="File", menu=file_menu)
 
 lbl = Label(root, text="Please set up your face in the database", bg="#00394d")
 lbl.grid(row=0, column=30, pady=100, padx=20)
+
+creatorButton2= Button(root, text='Set it up', activebackground='white',foreground="ivory2",
+                background="gray23",
+                font="Helvetica 14 bold italic",
+                borderwidth=7)
+creatorButton2.grid(row=0,column=11)
 creatorButton = Button(root, text="Set it Up!")
 creatorButton.bind("<Button-1>", createDataset)
 creatorButton.grid(row=0, column=10)
@@ -207,8 +228,9 @@ def showFrame():
     imgtk = ImageTk.PhotoImage(image=img)
     lmain.imgtk = imgtk
     lmain.configure(image=imgtk)
-    lmain.after(10, showFrame)
+    lmain.after(5, showFrame)
 
 root.config(menu=the_menu)
 showFrame()  #Display loop
+
 root.mainloop()  #Starts GUI
